@@ -263,7 +263,7 @@ patch() {
 	if [ -f "./download/$1.apk" ]; then
 		local p b m ks a pu opt
 		if [ "$3" = inotia ]; then
-			p="patch " b="-p *.rvp" m="" a="" ks="_ks" pu="--purge=true" opt="--legacy-options=./src/options/$2.json"
+			p="patch " b="-p *.rvp" m="" a="" ks="_ks" \ --keystore-entry-password=5QcOfinpB10SUbld9zRv --keystore-password=5QcOfinpB10SUbld9zRv --signer=V --keystore-entry-alias=ks pu="--purge=true" opt="--legacy-options=./src/options/$2.json"
 			echo "Patching with Revanced-cli inotia"
 		else
 			if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
